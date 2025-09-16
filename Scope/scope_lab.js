@@ -10,13 +10,6 @@ let blockLet = "this is a block let variable";
 const blockConst = "this is a block constant";
 }
 
-console.log(globalVar);
-console.log(globalLet);
-console.log(globalConst);
-
-console.log(blockVar);
-console.log(blockConst);
-
 function show(){
     var functionVar = "I'm a block-scoped var";
     let functionLet = "I'm a block-scoped let";
@@ -24,6 +17,28 @@ function show(){
     }
     show();
     
-    // console.log(functionVar); // Throws ReferenceError
-    // console.log(functionLet); // Throws ReferenceError
-    // console.log(functionConst); // Throws ReferenceError
+{
+    var blockVarTest = "This is for the test var";
+    let blockLetTest = "This is for the test let";
+    const blockConstTest = "This is for the test const";
+
+    console.log(blockVarTest);
+    console.log(blockLetTest);
+    console.log(blockConstTest);
+
+    blockVarTest = "This is the updated var";
+    blockLetTest = "This is the updated let";
+    // blockConstTest = "This is the updated const";
+
+    console.log(blockVarTest);
+    console.log(blockLetTest);
+    console.log(blockConstTest);
+}
+
+    blockVarTest = "This is the updated var out of scope";
+    blockLetTest = "This is the updated let out of scope";
+    blockConstTest = "This is the updated const out of scope";
+
+    console.log(blockVarTest);
+    console.log(blockLetTest);
+    console.log(blockConstTest);
