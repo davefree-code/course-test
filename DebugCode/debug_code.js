@@ -6,7 +6,9 @@
     // Check if inputs are valid numbers
     if (!isNaN(num1) && !isNaN(num2)) {
     // Perform the operation
-                    let result = multiply(num1, num2);
+                    let result = arithmetic(num1, num2);
+
+                    console.log(result)
 
                     // Display the result
                     displayResult(result);
@@ -15,17 +17,34 @@
                 }
             }
 
-            function multiply(a, b) {
+            function arithmetic(a, b) {
                 // Introduce a debugger statement to pause execution
-                debugger;
+                // debugger;
+
+                const sum = a + b;
+                const product = a * b;
+                const quotient = a/b;
+
+                const arit_list = {
+                    sum: sum,
+                    product: product,
+                    quotient: quotient
+                }
 
                 // Multiply the numbers
-                return a * b;
+                return arit_list;
             }
 
             function displayResult(result) {
                 // Display the result in the paragraph element
                 const resultElement = document.getElementById('result');
-                resultElement.textContent = `The result is: ${result}`;
+                console.log(`Sum is ${result.sum}`);
+                console.log(`Product is ${result.product}`);
+                console.log(`Quotient is ${result.quotient}`);
+                resultElement.innerHTML = `<h3> The Results are: </h3>` +
+                `<p> The sum is: ${result.sum} </p>` +
+                `<p> The product is: ${result.product} </p>` +
+                `<p> The quotient is: ${result.quotient} </p>` ;
+                
             }
         
